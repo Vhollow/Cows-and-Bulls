@@ -4,6 +4,7 @@
 using namespace std;
 
 constexpr int WORD_LENGTH = 6;
+constexpr int NUMBER_TURNS = 5;
 string Guess = "";
 
 void PrintIntro() {
@@ -21,14 +22,21 @@ string GetGuessAndPrint() {
 	cout << "Your guess is:" << g << endl;
 	return g;
 }
-
-int main() {
-
-	PrintIntro();
-	for (int i = 1; i <= 5; i++)
+void PlayGame() {
+	for (int i = 1; i <= NUMBER_TURNS; i++)
 	{
 		Guess = GetGuessAndPrint();
 	}
+}
+
+
+/*---------------------------------------------------------------------------------------------
+								Main Program
+---------------------------------------------------------------------------------------------*/
+int main() {
+
+	PrintIntro();
+	PlayGame();
 
 	return 0;
 }
