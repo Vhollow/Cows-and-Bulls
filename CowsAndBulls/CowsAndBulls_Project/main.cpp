@@ -20,6 +20,7 @@ string GetGuessAndPrint() {
 	getline(cin, g);
 	//Repeat back
 	cout << "Your guess is:" << g << endl;
+	cout << endl;
 	return g;
 }
 void PlayGame() {
@@ -29,6 +30,19 @@ void PlayGame() {
 	}
 }
 
+bool AskAgain() {
+	cout << "Do you want to play again? (Y/N):";
+	string Res = "";
+	cin >> Res;
+	cout << endl;
+	if (Res[0] == 'Y' || Res[0] == 'y') {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 
 /*---------------------------------------------------------------------------------------------
 								Main Program
@@ -36,7 +50,12 @@ void PlayGame() {
 int main() {
 
 	PrintIntro();
-	PlayGame();
+	bool again = false;
+	do{
+		PlayGame();
+		again = AskAgain();
+	} while (again);
+
 
 	return 0;
 }
