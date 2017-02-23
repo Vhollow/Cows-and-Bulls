@@ -12,19 +12,23 @@ void PrintIntro() {
 	cout << "In this game you have to guess a " << WORD_LENGTH << " letter length isogram\n" << endl;
 	return;
 }
-void GetGuess() {
+string GetGuessAndPrint() {
+	string g = "";
 	// Get a guess from player
 	cout << "Make a guess:";
-	getline(cin, Guess);
+	getline(cin, g);
 	//Repeat back
-	cout << "Your guess is:" << Guess << endl;
-	return;
+	cout << "Your guess is:" << g << endl;
+	return g;
 }
 
 int main() {
 
 	PrintIntro();
-	GetGuess();
+	for (int i = 1; i <= 5; i++)
+	{
+		Guess = GetGuessAndPrint();
+	}
 
 	return 0;
 }
