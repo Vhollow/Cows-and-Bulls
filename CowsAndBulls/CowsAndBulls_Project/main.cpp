@@ -1,26 +1,26 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
 
 constexpr int WORD_LENGTH = 6;
 constexpr int NUMBER_TURNS = 5;
-string Guess = "";
+std::string Guess = "";
 
 void PrintIntro() {
 	//Print the introduction lines
-	cout << "Welcome to Bulls and Cows.\n";
-	cout << "In this game you have to guess a " << WORD_LENGTH << " letter length isogram\n" << endl;
+	std::cout << "Welcome to Bulls and Cows.\n";
+	std::cout << "In this game you have to guess a " << WORD_LENGTH << " letter length isogram\n" << std::endl;
 	return;
 }
-string GetGuessAndPrint() {
-	string g = "";
+std::string GetGuessAndPrint() {
+	std::string g = "";
 	// Get a guess from player
-	cout << "Make a guess:";
-	getline(cin, g);
+	std::cout << "Make a guess:";
+	std::getline(std::cin, g);
 	//Repeat back
-	cout << "Your guess is:" << g << endl;
-	cout << endl;
+	std::cout << "Your guess is:" << g << std::endl;
+	std::cout << std::endl;
+	
 	return g;
 }
 void PlayGame() {
@@ -31,10 +31,10 @@ void PlayGame() {
 }
 
 bool AskAgain() {
-	cout << "Do you want to play again? (Y/N):";
-	string Res = "";
-	cin >> Res;
-	cout << endl;
+	std::cout << "Do you want to play again? (Y/N):";
+	std::string Res = "";
+	std::cin >> Res;
+	std::cout << std::endl;
 	if (Res[0] == 'Y' || Res[0] == 'y') {
 		return true;
 	}
