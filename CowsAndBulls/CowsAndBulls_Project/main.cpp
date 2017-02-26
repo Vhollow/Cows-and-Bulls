@@ -5,6 +5,7 @@
 
 constexpr int WORD_LENGTH = 6;
 std::string Guess = "";
+FBullCowGame Game;
 
 void PrintIntro() {
 	//Print the introduction lines
@@ -24,7 +25,7 @@ std::string GetGuessAndPrint() {
 	return g;
 }
 void PlayGame() {
-	FBullCowGame Game;
+	Game.Reset();
 	int Tries = Game.GetMaxTries();
 
 	for (int i = 1; i <= Tries; i++)
