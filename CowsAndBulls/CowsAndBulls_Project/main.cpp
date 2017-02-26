@@ -1,9 +1,9 @@
 #include <iostream>
 #include <string>
+#include "FBullCowGame.h"
 
 
 constexpr int WORD_LENGTH = 6;
-constexpr int NUMBER_TURNS = 5;
 std::string Guess = "";
 
 void PrintIntro() {
@@ -24,7 +24,10 @@ std::string GetGuessAndPrint() {
 	return g;
 }
 void PlayGame() {
-	for (int i = 1; i <= NUMBER_TURNS; i++)
+	FBullCowGame Game;
+	int Tries = Game.GetMaxTries();
+
+	for (int i = 1; i <= Tries; i++)
 	{
 		Guess = GetGuessAndPrint();
 	}

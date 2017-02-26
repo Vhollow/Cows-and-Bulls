@@ -1,17 +1,17 @@
 #include "FBullCowGame.h"
 
-void FBullCowGame::Reset(int WordLength)
-{
-}
-
 int FBullCowGame::GetMaxTries()
 {
-	return 0;
+	return MaxTries;
 }
 
 int FBullCowGame::GetTryNumber()
 {
-	return 0;
+	return CurrentTry;
+}
+
+void FBullCowGame::Reset(int WordLength)
+{
 }
 
 bool FBullCowGame::GameWon()

@@ -11,6 +11,6 @@ public:
 	bool CheckWord(std::string);
 
 private:
-	int CurrentTry;
-	int MaxTries;
+	int CurrentTry = 0;
+	int MaxTries = 5;
 };
