@@ -5,8 +5,8 @@ class FBullCowGame
 {
 public:
 	void Reset(int WordLength);
-	int GetMaxTries();
-	int GetTryNumber();
+	int GetMaxTries() const;
+	int GetTryNumber() const;
 	bool GameWon();
 	bool CheckWord(std::string);
 

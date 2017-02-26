@@ -1,11 +1,11 @@
 #include "FBullCowGame.h"
 
-int FBullCowGame::GetMaxTries()
+int FBullCowGame::GetMaxTries() const
 {
 	return MaxTries;
 }
 
-int FBullCowGame::GetTryNumber()
+int FBullCowGame::GetTryNumber() const
 {
 	return CurrentTry;
 }
