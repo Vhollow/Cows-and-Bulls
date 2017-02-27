@@ -17,13 +17,11 @@ void PrintIntro() {
 	std::cout << "In this game you have to guess a " << WORD_LENGTH << " letter length isogram\n" << std::endl;
 	return;
 }
-FText GetGuessAndPrint() {
+FText GetGuess() {
 	FText g = "";
 	// Get a guess from player
 	std::cout << "Make a guess:";
 	std::getline(std::cin, g);
-	//Repeat back
-	std::cout << "Your guess is:" << g << std::endl;
 	std::cout << std::endl;
 	
 	return g;
@@ -34,7 +32,12 @@ void PlayGame() {
 
 	for (int32 i = 1; i <= Tries; i++)
 	{
-		Guess = GetGuessAndPrint();
+		Guess = GetGuess();
+		FBullsAndCows BullsAndCows = Game.SubmitGuess(Guess);
+
+		std::cout << "Bulls: " << BullsAndCows.Bulls << std::endl;
+		std::cout << "Cows: " << BullsAndCows.Cows << std::endl;
+		std::cout << std::endl;
 	}
 }
 

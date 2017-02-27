@@ -4,7 +4,7 @@
 using FString = std::string;
 using int32 = int;
 
-struct BullsAndCows {
+struct FBullsAndCows {
 	int32 Bulls = 0;
 	int32 Cows = 0;
 };
@@ -22,7 +22,7 @@ public:
 	void Reset();
 	bool GameWon();
 	bool CheckWord(FString);
-	BullsAndCows SubmitGuess(FString);
+	FBullsAndCows SubmitGuess(FString);
 
 private:
 	int32 CurrentTry;

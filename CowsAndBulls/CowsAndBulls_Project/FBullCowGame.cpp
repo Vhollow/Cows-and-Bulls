@@ -32,11 +32,23 @@ bool FBullCowGame::CheckWord(FString)
 	return false;
 }
 
-BullsAndCows FBullCowGame::SubmitGuess(FString)
+FBullsAndCows FBullCowGame::SubmitGuess(FString Guess)
 {
 	CurrentTry++;
 
-	BullsAndCows BAndC;
+	FBullsAndCows BAndC;
+
+	for (int32 i = 0; i < HiddenWord.length(); i++) {
+		for (int32 j = 0; j < HiddenWord.length(); j++) {
+			if (Guess[i] == HiddenWord[j]) {
+				if(i==j) BAndC.Bulls++;
+				else BAndC.Cows++;
+			}
+			else {
+
+			}
+		}
+	}
 
 	return BAndC;
 }
