@@ -9,13 +9,6 @@ struct FBullsAndCows {
 	int32 Cows = 0;
 };
 
-enum EValidGuess {
-	OK,
-	Wrong_Length,
-	Not_LowerCase,
-	Not_Isogram
-};
-
 
 class FBullCowGame
 {
@@ -29,7 +22,7 @@ public:
 	//Other methods
 	void Reset();
 	bool GameWon();
-	EValidGuess CheckWord(FString);
+	bool CheckWord(FString);
 	FBullsAndCows SubmitGuess(FString);
 
 private:
