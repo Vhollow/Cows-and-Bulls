@@ -18,6 +18,7 @@ public:
 	//Getters
 	int32 GetMaxTries() const;
 	int32 GetTryNumber() const;
+	int32 GetWordLength() const;
 	//Other methods
 	void Reset();
 	bool GameWon();

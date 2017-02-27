@@ -6,15 +6,14 @@ using FText = std::string;
 using int32 = int;
 
 
-constexpr int32 WORD_LENGTH = 6;
 FText Guess = "";
-FBullCowGame Game;
+FBullCowGame Game = FBullCowGame::FBullCowGame();
 
 
 void PrintIntro() {
 	//Print the introduction lines
 	std::cout << "Welcome to Bulls and Cows.\n";
-	std::cout << "In this game you have to guess a " << WORD_LENGTH << " letter length isogram\n" << std::endl;
+	std::cout << "In this game you have to guess a " << Game.GetWordLength() << " letter length isogram\n" << std::endl;
 	return;
 }
 FText GetGuess() {

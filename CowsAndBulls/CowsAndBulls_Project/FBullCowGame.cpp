@@ -15,6 +15,11 @@ int32 FBullCowGame::GetTryNumber() const
 	return CurrentTry;
 }
 
+int32 FBullCowGame::GetWordLength() const
+{
+	return HiddenWord.length();
+}
+
 void FBullCowGame::Reset()
 {
 	CurrentTry = 1;
