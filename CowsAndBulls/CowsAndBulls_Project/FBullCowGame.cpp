@@ -19,6 +19,7 @@ void FBullCowGame::Reset()
 {
 	CurrentTry = 1;
 	MaxTries = 5;
+	HiddenWord = "vision";
 }
 
 bool FBullCowGame::GameWon()
@@ -29,4 +30,13 @@ bool FBullCowGame::GameWon()
 bool FBullCowGame::CheckWord(FString)
 {
 	return false;
+}
+
+BullsAndCows FBullCowGame::SubmitGuess(FString)
+{
+	CurrentTry++;
+
+	BullsAndCows BAndC;
+
+	return BAndC;
 }

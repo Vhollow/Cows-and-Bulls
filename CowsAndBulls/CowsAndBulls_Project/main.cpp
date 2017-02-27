@@ -10,6 +10,7 @@ constexpr int32 WORD_LENGTH = 6;
 FText Guess = "";
 FBullCowGame Game;
 
+
 void PrintIntro() {
 	//Print the introduction lines
 	std::cout << "Welcome to Bulls and Cows.\n";
