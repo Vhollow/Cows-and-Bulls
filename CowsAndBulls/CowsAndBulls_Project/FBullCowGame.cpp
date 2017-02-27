@@ -32,9 +32,9 @@ bool FBullCowGame::GameWon()
 	return false;
 }
 
-bool FBullCowGame::CheckWord(FString)
+EValidGuess FBullCowGame::CheckWord(FString)
 {
-	return false;
+	return EValidGuess::OK;
 }
 
 FBullsAndCows FBullCowGame::SubmitGuess(FString Guess)
