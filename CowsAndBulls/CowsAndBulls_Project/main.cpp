@@ -2,9 +2,12 @@
 #include <string>
 #include "FBullCowGame.h"
 
+using FText = std::string;
+using int32 = int;
 
-constexpr int WORD_LENGTH = 6;
-std::string Guess = "";
+
+constexpr int32 WORD_LENGTH = 6;
+FText Guess = "";
 FBullCowGame Game;
 
 void PrintIntro() {
@@ -13,8 +16,8 @@ void PrintIntro() {
 	std::cout << "In this game you have to guess a " << WORD_LENGTH << " letter length isogram\n" << std::endl;
 	return;
 }
-std::string GetGuessAndPrint() {
-	std::string g = "";
+FText GetGuessAndPrint() {
+	FText g = "";
 	// Get a guess from player
 	std::cout << "Make a guess:";
 	std::getline(std::cin, g);
@@ -26,9 +29,9 @@ std::string GetGuessAndPrint() {
 }
 void PlayGame() {
 	Game.Reset();
-	int Tries = Game.GetMaxTries();
+	int32 Tries = Game.GetMaxTries();
 
-	for (int i = 1; i <= Tries; i++)
+	for (int32 i = 1; i <= Tries; i++)
 	{
 		Guess = GetGuessAndPrint();
 	}
@@ -36,7 +39,7 @@ void PlayGame() {
 
 bool AskAgain() {
 	std::cout << "Do you want to play again? (Y/N):";
-	std::string Res = "";
+	FText Res = "";
 	std::cin >> Res;
 	std::cout << std::endl;
 	if (Res[0] == 'Y' || Res[0] == 'y') {

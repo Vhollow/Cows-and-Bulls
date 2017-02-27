@@ -5,12 +5,12 @@ FBullCowGame::FBullCowGame()
 	Reset();
 }
 
-int FBullCowGame::GetMaxTries() const
+int32 FBullCowGame::GetMaxTries() const
 {
 	return MaxTries;
 }
 
-int FBullCowGame::GetTryNumber() const
+int32 FBullCowGame::GetTryNumber() const
 {
 	return CurrentTry;
 }
@@ -26,7 +26,7 @@ bool FBullCowGame::GameWon()
 	return false;
 }
 
-bool FBullCowGame::CheckWord(std::string)
+bool FBullCowGame::CheckWord(FString)
 {
 	return false;
 }
