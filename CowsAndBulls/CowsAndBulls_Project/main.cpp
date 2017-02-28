@@ -32,6 +32,7 @@ void PlayGame() {
 	for (int32 i = 1; i <= Tries; i++)
 	{
 		Guess = GetGuess();
+		EValidGuess State = Game.CheckWord(Guess);
 		FBullsAndCows BullsAndCows = Game.SubmitGuess(Guess);
 
 		std::cout << "Bulls: " << BullsAndCows.Bulls << std::endl;

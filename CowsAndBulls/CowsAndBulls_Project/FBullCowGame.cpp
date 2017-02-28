@@ -32,9 +32,23 @@ bool FBullCowGame::GameWon()
 	return false;
 }
 
-EValidGuess FBullCowGame::CheckWord(FString)
-{
-	return EValidGuess::OK;
+EValidGuess FBullCowGame::CheckWord(FString Guess)
+{	
+	if (false) {
+		return EValidGuess::Not_Isogram;
+	}
+	else if(false)
+	{
+		return EValidGuess::Not_LowerCase;
+	}
+	else if (Guess.length() != HiddenWord.length())
+	{
+		return EValidGuess::Wrong_Length;
+	}
+	else
+	{
+		return EValidGuess::OK;
+	}
 }
 
 FBullsAndCows FBullCowGame::SubmitGuess(FString Guess)
