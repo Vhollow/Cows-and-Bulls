@@ -1,3 +1,6 @@
+/*
+	Game logic.
+*/
 #pragma once
 #include <string>
 

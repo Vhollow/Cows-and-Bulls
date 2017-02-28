@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "FBullCowGame.h"
@@ -10,8 +11,7 @@ FText Guess = "";
 FBullCowGame Game = FBullCowGame::FBullCowGame();
 
 
-void PrintIntro() {
-	//Print the introduction lines
+void PrintIntro() {//Print the introduction lines
 	std::cout << "Welcome to Bulls and Cows.\n";
 	std::cout << std::endl;
 	std::cout << "          }   {         ___ " << std::endl;
@@ -24,17 +24,16 @@ void PrintIntro() {
 	return;
 }
 
-FText GetGuess() {
+FText GetGuess() {// Get a guess from player
 	FText g = "";
 	EValidGuess State;
-	// Get a guess from player
 	do
 	{
 
 		std::cout << "Make a guess:";
 		std::getline(std::cin, g);
 
-		State = Game.CheckWord(g);
+		State = Game.CheckWord(g);//Makes sure the guess is a valid word
 		switch (State)
 		{
 		case Wrong_Length:
@@ -57,7 +56,7 @@ FText GetGuess() {
 	return g;
 }
 
-bool AskAgain() {
+bool AskAgain() {//Ask to play again
 	std::cout << "Do you want to play again? (Y/N):";
 	FText Res = "";
 	std::cin >> Res;
@@ -71,7 +70,7 @@ bool AskAgain() {
 	}
 }
 
-void PrintSummary() {
+void PrintSummary() {//Prints the result of the game
 
 	if (Game.GameWon()) std::cout << "YOU WON" << std::endl;
 	else std::cout << "You run out of tries. Better luck next time" << std::endl;
@@ -79,12 +78,12 @@ void PrintSummary() {
 	std::cout << std::endl;
 }
 
-void PlayGame() {
+void PlayGame() {//Controls the game flow
 	Game.Reset();
 	int32 Tries = Game.GetMaxTries();
 	int32 i = 1;
 
-	while ( !Game.GameWon() && Game.GetTryNumber() <= Tries)
+	while ( !Game.GameWon() && Game.GetTryNumber() <= Tries)//Finish when you win the game or get out of tries
 	{
 		std::cout << "Try number: " << Game.GetTryNumber() << ".\n";
 		Guess = GetGuess();
