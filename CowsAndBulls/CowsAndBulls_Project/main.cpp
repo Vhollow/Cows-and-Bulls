@@ -13,6 +13,13 @@ FBullCowGame Game = FBullCowGame::FBullCowGame();
 void PrintIntro() {
 	//Print the introduction lines
 	std::cout << "Welcome to Bulls and Cows.\n";
+	std::cout << std::endl;
+	std::cout << "          }   {         ___ " << std::endl;
+	std::cout << "          (o o)        (o o) " << std::endl;
+	std::cout << "   /-------\\ /          \\ /-------\\ " << std::endl;
+	std::cout << "  / | BULL |O            O| COW  | \\ " << std::endl;
+	std::cout << " *  |-,--- |              |------|  * " << std::endl;
+	std::cout << "    ^      ^              ^      ^ " << std::endl;
 	std::cout << "In this game you have to guess a " << Game.GetWordLength() << " letter length isogram\n" << std::endl;
 	return;
 }

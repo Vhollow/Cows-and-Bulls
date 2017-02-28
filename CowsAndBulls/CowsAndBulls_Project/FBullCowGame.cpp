@@ -40,7 +40,7 @@ EValidGuess FBullCowGame::CheckWord(FString Guess)
 	if (!IsIsogram(Guess)) {
 		return EValidGuess::Not_Isogram;
 	}
-	else if(false)
+	else if(!IsLowerCase(Guess))
 	{
 		return EValidGuess::Not_LowerCase;
 	}

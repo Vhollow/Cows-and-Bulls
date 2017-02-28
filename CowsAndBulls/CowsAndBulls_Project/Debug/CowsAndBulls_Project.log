@@ -1,2 +1,5 @@
-﻿  CowsAndBulls_Project.vcxproj -> C:\Users\Vicente\Documents\GitHub\Cows-and-Bulls\CowsAndBulls\Debug\CowsAndBulls_Project.exe
+﻿  FBullCowGame.cpp
+c:\users\vicente\documents\github\cows-and-bulls\cowsandbulls\cowsandbulls_project\fbullcowgame.cpp(63): warning C4018: '<': no coinciden signed/unsigned
+c:\users\vicente\documents\github\cows-and-bulls\cowsandbulls\cowsandbulls_project\fbullcowgame.cpp(64): warning C4018: '<': no coinciden signed/unsigned
+  CowsAndBulls_Project.vcxproj -> C:\Users\Vicente\Documents\GitHub\Cows-and-Bulls\CowsAndBulls\Debug\CowsAndBulls_Project.exe
   CowsAndBulls_Project.vcxproj -> C:\Users\Vicente\Documents\GitHub\Cows-and-Bulls\CowsAndBulls\Debug\CowsAndBulls_Project.pdb (Full PDB)
