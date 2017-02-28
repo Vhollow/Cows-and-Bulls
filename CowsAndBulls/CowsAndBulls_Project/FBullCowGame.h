@@ -37,4 +37,5 @@ private:
 	int32 MaxTries;
 	FString HiddenWord;
 	bool Won;
+	bool IsIsogram(FString) const;
 };

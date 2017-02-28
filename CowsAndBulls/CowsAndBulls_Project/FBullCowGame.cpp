@@ -1,4 +1,6 @@
 #include "FBullCowGame.h"
+#include <map>
+#define TMap std::map
 
 FBullCowGame::FBullCowGame()
 {
@@ -35,7 +37,7 @@ bool FBullCowGame::GameWon()
 
 EValidGuess FBullCowGame::CheckWord(FString Guess)
 {	
-	if (false) {
+	if (!IsIsogram(Guess)) {
 		return EValidGuess::Not_Isogram;
 	}
 	else if(false)
@@ -72,4 +74,16 @@ FBullsAndCows FBullCowGame::SubmitGuess(FString Guess)
 	}
 
 	return BAndC;
+}
+
+bool FBullCowGame::IsIsogram(FString Word) const
+{	
+	if (Word.length() <= 1) { return false; }
+	TMap<char, bool> LetterSeen;
+	for (auto Letter : Word) {
+		Letter = tolower(Letter);
+		if (LetterSeen[Letter]) { return false; }
+		else { LetterSeen[Letter] = true; }
+	}
+	return true;
 }
