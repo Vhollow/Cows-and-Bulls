@@ -76,6 +76,20 @@ FBullsAndCows FBullCowGame::SubmitGuess(FString Guess)
 	return BAndC;
 }
 
+bool FBullCowGame::IsLowerCase(FString Word) const
+{
+	if (Word.length() < 1 || Word == "\0") { return false; }
+	for (char Letter : Word) {
+		if (Letter == ' ') {
+			return false;
+		}
+		else if (!islower(Letter)) {
+			return false;
+		}
+	}
+	return true;
+}
+
 bool FBullCowGame::IsIsogram(FString Word) const
 {	
 	if (Word.length() <= 1) { return false; }
