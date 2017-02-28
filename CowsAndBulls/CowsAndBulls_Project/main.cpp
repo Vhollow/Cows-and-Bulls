@@ -16,6 +16,7 @@ void PrintIntro() {
 	std::cout << "In this game you have to guess a " << Game.GetWordLength() << " letter length isogram\n" << std::endl;
 	return;
 }
+
 FText GetGuess() {
 	FText g = "";
 	EValidGuess State;
@@ -42,25 +43,11 @@ FText GetGuess() {
 			break;
 		}
 
+		std::cout << std::endl;
+
 	} while (State != EValidGuess::OK);
 
-	std::cout << std::endl;
-
 	return g;
-}
-void PlayGame() {
-	Game.Reset();
-	int32 Tries = Game.GetMaxTries();
-
-	for (int32 i = 1; i <= Tries; i++)
-	{
-		Guess = GetGuess();
-		FBullsAndCows BullsAndCows = Game.SubmitGuess(Guess);
-
-		std::cout << "Bulls: " << BullsAndCows.Bulls << std::endl;
-		std::cout << "Cows: " << BullsAndCows.Cows << std::endl;
-		std::cout << std::endl;
-	}
 }
 
 bool AskAgain() {
@@ -76,6 +63,33 @@ bool AskAgain() {
 		return false;
 	}
 }
+
+void PrintSummary() {
+
+	if (Game.GameWon()) std::cout << "YOU WON" << std::endl;
+	else std::cout << "You run out of tries. Better luck next time" << std::endl;
+
+	std::cout << std::endl;
+}
+
+void PlayGame() {
+	Game.Reset();
+	int32 Tries = Game.GetMaxTries();
+	int32 i = 1;
+
+	while ( !Game.GameWon() && Game.GetTryNumber() <= Tries)
+	{
+		std::cout << "Try number: " << Game.GetTryNumber() << ".\n";
+		Guess = GetGuess();
+		FBullsAndCows BullsAndCows = Game.SubmitGuess(Guess);
+
+		std::cout << "Bulls: " << BullsAndCows.Bulls << std::endl;
+		std::cout << "Cows: " << BullsAndCows.Cows << std::endl;
+		std::cout << std::endl;
+	}
+	PrintSummary();
+}
+
 
 /*---------------------------------------------------------------------------------------------
 								Main Program

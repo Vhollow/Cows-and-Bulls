@@ -25,11 +25,12 @@ void FBullCowGame::Reset()
 	CurrentTry = 1;
 	MaxTries = 5;
 	HiddenWord = "vision";
+	Won = false;
 }
 
 bool FBullCowGame::GameWon()
 {
-	return false;
+	return Won;
 }
 
 EValidGuess FBullCowGame::CheckWord(FString Guess)
@@ -63,10 +64,11 @@ FBullsAndCows FBullCowGame::SubmitGuess(FString Guess)
 				if(i==j) BAndC.Bulls++;
 				else BAndC.Cows++;
 			}
-			else {
-
-			}
 		}
+	}
+	if (BAndC.Bulls == GetWordLength())
+	{
+		Won = true;
 	}
 
 	return BAndC;
