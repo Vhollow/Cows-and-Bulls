@@ -34,7 +34,6 @@ public:
 
 private:
 	int32 CurrentTry;
-	int32 MaxTries;
 	FString HiddenWord;
 	bool Won;
 	bool IsLowerCase(FString) const;
