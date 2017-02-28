@@ -18,11 +18,34 @@ void PrintIntro() {
 }
 FText GetGuess() {
 	FText g = "";
+	EValidGuess State;
 	// Get a guess from player
-	std::cout << "Make a guess:";
-	std::getline(std::cin, g);
+	do
+	{
+
+		std::cout << "Make a guess:";
+		std::getline(std::cin, g);
+
+		State = Game.CheckWord(g);
+		switch (State)
+		{
+		case Wrong_Length:
+			std::cout << "Wrong length. Enter a " << Game.GetWordLength() << " letter isogram.\n";
+			break;
+		case Not_LowerCase:
+			std::cout << "Enter a lower case word.\n";
+			break;
+		case Not_Isogram:
+			std::cout << "Enter a word without repeating letters.\n";
+			break;
+		default:
+			break;
+		}
+
+	} while (State != EValidGuess::OK);
+
 	std::cout << std::endl;
-	
+
 	return g;
 }
 void PlayGame() {
@@ -32,7 +55,6 @@ void PlayGame() {
 	for (int32 i = 1; i <= Tries; i++)
 	{
 		Guess = GetGuess();
-		EValidGuess State = Game.CheckWord(Guess);
 		FBullsAndCows BullsAndCows = Game.SubmitGuess(Guess);
 
 		std::cout << "Bulls: " << BullsAndCows.Bulls << std::endl;

@@ -41,7 +41,7 @@ EValidGuess FBullCowGame::CheckWord(FString Guess)
 	{
 		return EValidGuess::Not_LowerCase;
 	}
-	else if (Guess.length() != HiddenWord.length())
+	else if (Guess.length() != GetWordLength())
 	{
 		return EValidGuess::Wrong_Length;
 	}

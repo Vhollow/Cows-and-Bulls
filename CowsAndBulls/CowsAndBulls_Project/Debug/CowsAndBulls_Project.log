@@ -1,7 +1,3 @@
 ﻿  main.cpp
-  FBullCowGame.cpp
-c:\users\vicente\documents\github\cows-and-bulls\cowsandbulls\cowsandbulls_project\fbullcowgame.cpp(46): warning C4018: '<': no coinciden signed/unsigned
-c:\users\vicente\documents\github\cows-and-bulls\cowsandbulls\cowsandbulls_project\fbullcowgame.cpp(47): warning C4018: '<': no coinciden signed/unsigned
-  Generando código...
   CowsAndBulls_Project.vcxproj -> C:\Users\Vicente\Documents\GitHub\Cows-and-Bulls\CowsAndBulls\Debug\CowsAndBulls_Project.exe
   CowsAndBulls_Project.vcxproj -> C:\Users\Vicente\Documents\GitHub\Cows-and-Bulls\CowsAndBulls\Debug\CowsAndBulls_Project.pdb (Full PDB)
